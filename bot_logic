@@ -1,0 +1,50 @@
+import random
+
+
+def gen_pass(pass_length):
+    elements = "+-/*!&$#?=@<>"
+    password = ""
+
+    for i in range(pass_length):
+        password += random.choice(elements)
+
+    return password
+
+
+def gen_emodji():
+    emodji = ["\U0001f600", "\U0001f642", "\U0001F606", "\U0001F923"]
+    return random.choice(emodji)
+
+
+def flip_coin():
+    flip = random.randint(0, 2)
+    if flip == 0:
+        return "ОРЕЛ"
+    else:
+        return "РЕШКА"
+    
+def rand_soc():
+    sox = random.randint(0,100)
+    if sox == 0:
+        return "Вк"
+    elif sox <=10:
+        return "Телеграм"
+    elif sox <=20:
+        return "Ват-сап"
+    elif sox <=30:
+        return "Mail"
+    elif sox <=40:
+        return "Сообщения"
+    elif sox <=50:
+        return "Твиттер"
+    elif sox <=60:
+        return "Фэйсбук"
+    elif sox <=70:
+        return "Инстаграм"
+    elif sox <=80:
+        return "Снапчат"
+    elif sox <=90:
+        return "Твич"
+    else:
+        return "Дискорд"
+     
