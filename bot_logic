@@ -1,75 +1,25 @@
 import random
+import requests
 
+def infobot ():
+    ecobot='''привет!
+    я эко-бот. сегодня я тебе помогу улучшить твои знания в экологи!
+    для начала я тебе расскажу зачем меня создали:) сейчас происходит массовое загрезнение планеты, поэтому надо больше людей и ботов,что бы справиться c этой проблемой.
+    я помогу найти тебе альтернативу каким-либо предметам,дам статьи про экологию. 
+    напиши $help и узнай мои функции'''
+    return ecobot
 
-def gen_pass(pass_length):
-    elements = "+-/*!&$#?=@<>"
-    password = ""
+def help_fovt ():
+    foct='''привет!вот мои функции:
+    $info-расскажу тебе немного о себе
+    $staty-дам не много статей об экологии
+    $altern- дам альтернативу какому-либо предмету'''
+    return foct
+def stat():
+    stt=["https://yabs.yandex.ru/count/WYqejI_zO6K17H40j1zaMGVeJKjaIWK0PG8nndeoP000000u109mneIVcSxXrQkl0O010OW1uw_RbPu1a06evCgYue20W0AO0QZaog9Yk076xjtw9S010jW1o9Rnh07W0Pp1ewW1w07q0OW2pfcJ0PW2tEwp6Q02a8kn6S022zW20l02peMHmGVu0l3gyU2u1Fy1s0Ivj0Je1Bcq1FW4-8dF0OW5-8dF0P05yUdl0Q05nvO_g0NcqZIm1URIDBW5nlmye0RMgW6e1jQg0RW61Ca66ifdCRRYcXof1uRXl8-96_8Ok0U01T075k07XWhG2A20W824We262E08oCNO3EW91u0A0VWAWBKOw0oZ0k0DWu20m820W0YO3fgKdulZrhZD78Y0wH9SmD7ypjih4QWJiwRexzo8WRSMw1I40g0MaAkgeGR95l0_q1QCdTw-0PWNwAYgBwWN2S0NjDO1e1dMgW6m6RWP____0O4Q___t_cO5t_Qm6f2WfOoFWf-kBe8SKJ4sE34mCZauCp0sCpapCJGjCJ8mCJ0tD3WuDZKnD3WvDZ8rCZOjOc5iOMvZPN8jR3TiPNPbR6LoBMjrOd8jUN0jSs5pBJ4pE2r2GKmjCJCpDgWU0R0V0SWVfCkuLhWWskSji281rIB__t__WIEG8v-AW-dSpglQw06O8zN7iPo1g_YBmm4A08cW8TA83Ap152UNOloYuG1M11CCEydh41r_xArQfOWbbaQ89W00~1?etext=2202.roRQxRaoB8wWXy7mW4EFjwzrzxPKXv0Gpj5MC4AwKsJq5jdcT0xcN-lHxXZEu80beHlnbXZheXJwd21vZWVjdw.e7aff011cb6d6f8005dd0bd8dab755af785cb68e&from=yandex.ru%3Bsearch%26%23x2F%3B%3Bweb%3B%3B0%3B&q=%D1%8D%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8&baobab_event_id=lg95rep0b6","https://moluch.ru/keywords/%D0%AD%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F/?ysclid=lg95s1pp2h125537875","https://moluch.ru/keywords/%D0%AD%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F/?ysclid=lg97u4akah325690478","https://postnauka.ru/themes/ecology?ysclid=lg97umyqu5824944078","https://cyberleninka.ru/article/n/ekologiya-v-rossii-sovremennoe-sostoyanie-i-aktualnye-problemy?ysclid=lg97vayhuc301792925","https://rg.ru/tema/obshestvo/ekologija?ysclid=lg97v3gadb865414142"]
+    return random.choice(stt)
 
-    for i in range(pass_length):
-        password += random.choice(elements)
-
-    return password
-
-
-def gen_emodji():
-    emodji = ["\U0001f600", "\U0001f642", "\U0001F606", "\U0001F923"]
-    return random.choice(emodji)
-
-
-def flip_coin():
-    flip = random.randint(0, 2)
-    if flip == 0:
-        return "ОРЕЛ"
-    else:
-        return "РЕШКА"
+def alternativa(key):
+    alter_dict={"пакет":["шопер","сумка","Авоська","Фруктовка"]}
+    return random.choice(alter_dict[key])
     
-def rand_soc():
-    sox = random.randint(0,100)
-    if sox == 0:
-        return "Вк"
-    elif sox <=10:
-        return "Телеграм"
-    elif sox <=20:
-        return "Ват-сап"
-    elif sox <=30:
-        return "Mail"
-    elif sox <=40:
-        return "Сообщения"
-    elif sox <=50:
-        return "Твиттер"
-    elif sox <=60:
-        return "Фэйсбук"
-    elif sox <=70:
-        return "Инстаграм"
-    elif sox <=80:
-        return "Снапчат"
-    elif sox <=90:
-        return "Твич"
-    else:
-        return "Дискорд"
-     
-def rand_stati_programm():
-    stat = random.randint(0,100)
-    if stat == 0:
-        return "https://practicum.yandex.ru/blog/programming/"
-    elif stat <=10:
-        return "https://tproger.ru/articles/?ysclid=lg7p51pssd640183081"
-    elif stat <=20:
-        return "https://gb.ru/blog/category/programmirovanie/?ysclid=lg7p55vioe239730996"
-    elif stat <=30:
-        return "https://habr.com/ru/flows/develop/"
-    elif stat <=40:
-        return "https://habr.com/ru/flows/develop/"
-    elif stat <=50:
-        return "https://vc.ru/tag/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5?ysclid=lg7p5jvyq2576782714"
-    elif stat <=60:
-        return "https://naked-science.ru/tags/programmirovanie?ysclid=lg7p5ow8n5198506715"
-    elif stat <=70:
-        return "https://dtf.ru/tag/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5?ysclid=lg7p629lo0495298672"
-    elif stat <=80:
-        return "https://proglib.io/p/tyzhprogrammist-pochini-mne-kofevarku-13-mifov-o-programmistah-i-programmirovanii-2021-07-30?ysclid=lg7p690h4q786913662"
-    elif stat <=90:
-        return "https://thecode.media/?ysclid=lg7p6gfbi8433574248"
-    else:
-        return "https://yabs.yandex.ru/count/WcGejI_zO901rH8092CPPjniV5Hs2mK0a08GW0WnLI4nP000000u18QJxD-OrksRdm600G680SNks06G0QxEg--Hh_BP1g01gDkN_T-0W802g06esvVzNxW1oegRpoN00GBO0VY3YAi1u07Irxsg0UW1AeW2pfcJ0Q02jB_I1S02nUxOeDk_Wmtu0l3gyU2XnhZLvG6Ws0IgaGhe1E1n-0Ivumw81RdZ3f05vvqHe0M6mGIe1V3W0x05yE03k0Nci0J01P-QBSW5YhyBe0RMgW6e1jQg0RW61Ca66ifdCRRYcXof1ndYA9zzlvyOk0Uq1j073k07XWhG2922a830W8262E08sf_f0kW91u0A0VWAWBKOw0oZ0k0DWu20m820W0YO3fgKdulZrhZD782X4A4HPsPcPcPcvkaINC3H_CxRAn6e4xEcwE_SY86t5e0KW8202D0KpwMjVUWKX0AW5f2hgg46oHRmFz0MvlVUlW6O5xsYrI-e5md05xJM0Q0Prge1i1cu6V___m616l__c--SPDCwi1gsx8-UoktQWOm1WXnGCJOuC3aqCJCvDpOvDJSqE2qpCZapCJGmDJOoDpOpCpGvEJ8mBM9XR65kOsLoBMmtR6LsPMnbSYrhTM9oBNbmBNPiOIqnCJSjGa5CBJCtDJ6e7W6m7mB87_o1n5Mf82JxukT3lTW_k23QvosG8itUBP0Ypjuja2BFtYsm8W7L8l__V_-18v0ZjTJNmfRyoUUg0PWZyDdagxtsyhH_2W0YhI4oYmoin1Jde6AKfE6me-OYNKZ9IuBuKm8tUQD7L52sCmO0~1?etext=2202.Twh7PTvqU73g3GibHEqlxzEXQscQ8kalVDCgzU21SpO93sV643JskVco7iRng5jrBDhO3WjNc_o0dCV467K7wVJV6UWBLL598UAtiKfpjnxreG96dnlvZmhmc3dtc2l1.3ac82772c089a081fa6a2e253b99ef8dfb5a3751&from=yandex.ru%3Bsearch%26%23x2F%3B%3Bweb%3B%3B0%3B&q=%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8B%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8+%D0%BF%D1%80%D0%BE+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&baobab_event_id=lg7p6o0vki"
-     
