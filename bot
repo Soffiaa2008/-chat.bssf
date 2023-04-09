@@ -1,8 +1,8 @@
 import os
 import discord
 import requests
+from bot_lo import *
 # import * - это тоже самое, что перечислить все файлы
-from bot_logic import *
 from discord.ext import commands
 # Переменная intents - хранит привилегии бота
 intents = discord.Intents.default()
@@ -19,45 +19,26 @@ async def on_ready():
 @bot.command()
 async def hello(ctx):
     await ctx.send('Привет! Я бот!')    
+
 @bot.command()
-async def smile(ctx):
-    await ctx.send(gen_emodji())    
+async def info(ctx):
+    await ctx.send(infobot())  
+
 @bot.command()
-async def coin(ctx):
-    await ctx.send(flip_coin())    
+async def help(ctx):
+    await ctx.send(help_fovt()) 
+
 @bot.command()
-async def password(ctx,count_pass=5):
-    await ctx.send(gen_pass(count_pass))
+async def staty(ctx):
+    await ctx.send(stat())    
+
 @bot.command()
-async def soc(ctx):
-    await ctx.send(rand_soc()) 
-@bot.command()
-async def stat(ctx):
-    await ctx.send(rand_stati_programm()) 
-@bot.command()  
-async def mem(ctx):
-    img=os.listdir('images')
-    randimg=random.choice(img)
-    with open(f'images/{randimg}', 'rb') as f:
-        # В переменную кладем файл, который преобразуется в файл библиотеки Discord!
-        picture = discord.File(f)
-   # Можем передавать файл как параметр!
-    await ctx.send(file=picture)
-
-def get_duck_image_url():    
-    url = 'https://random-d.uk/api/random'
-    res = requests.get(url)
-    data = res.json()
-    return data['url']
-@bot.command('duck')
-async def duck(ctx):
-    '''По команде duck вызывает функцию get_duck_image_url'''
-    image_url = get_duck_image_url()
-    await ctx.send(image_url)
+async def altern(ctx,key):
+    await ctx.send(alternativa(key))  
 
 
 
 
 
 
-bot.run("MTA4Njk5MTE4NjE0NjkwMjA5OA.Gwy5kR.GGIZT5-5eh7AsG5sElQ4WwqycHBuJqW8XN6On8")
+bot.run("ТОКЕН")
